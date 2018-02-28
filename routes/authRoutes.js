@@ -75,7 +75,7 @@ module.exports = app => {
 
     const msg = {
       to: list,
-      from: "no_reply@servey-bemail.com",
+      from: "no_reply@bemail.com",
       subject: subject,
       html: "<div>" + body + "</div>"
     };
