@@ -1,5 +1,9 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-module.exports = mongoose.model('users', {
-  googleId:String
-})
+module.exports = mongoose.model("users", {
+  googleId: String,
+  credits: {
+    type: Number,
+    default: 0
+  }
+});
