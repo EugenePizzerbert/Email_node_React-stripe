@@ -1,6 +1,8 @@
 const passport = require("passport"),
   key = require("../config/keys");
 (stripe = require("stripe")(key.stripeKey)), (path = require("path"));
+const sgMail = require("@sendgrid/mail");
+sgMail.setApiKey(key.sendGridKey);
 
 module.exports = app => {
   app.get(
@@ -66,4 +68,24 @@ module.exports = app => {
       }
     );
   });
+
+  //email
+  app.post("/api/servey", (req, res) => {
+    const { title, subject, body, list } = req.body;
+
+    const msg = {
+      to: list,
+      from: "no_reply@servey-bemail.com",
+      subject: subject,
+      html: "<div>" + body + "</div>"
+    };
+    sgMail.send(msg);
+    res.status(200).send({ message: "email sent" });
+  });
 };
+
+// var servey ={
+// title:"new servey",
+// sebject:"this is the first servey",
+// list:["akbarj@gmail.com","themazsolution@gmail.com"],
+// body:"ok, I am the body"}

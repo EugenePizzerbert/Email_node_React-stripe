@@ -4,7 +4,9 @@ module.exports = {
   googleClientSecret: "qRHPlZ8KYi2Pn_Z8i2q1VnvN",
   mongoURI: "mongodb://akbarj:success20@ds243728.mlab.com:43728/emaily-dev",
   cookieKey: "dskljlkjfsdkljfksjdfjslkjfkdjskjlsdjfdksjfkjsl",
-  stripeKey: "sk_test_PMJ39mEnNdHcljq7SPK6K8hz"
+  stripeKey: "sk_test_PMJ39mEnNdHcljq7SPK6K8hz",
+  sendGridKey:
+    "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"
 };
 
 //this is old stuff
