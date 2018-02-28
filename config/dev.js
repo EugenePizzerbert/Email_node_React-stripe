@@ -7,4 +7,6 @@ module.exports = {
   stripeKey: "sk_test_PMJ39mEnNdHcljq7SPK6K8hz"
 };
 
+//this is old stuff
+
 //mighty-savannah-50823
