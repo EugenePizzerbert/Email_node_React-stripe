@@ -83,6 +83,7 @@ module.exports = app => {
     res.status(200).send({ message: "email sent" });
   });
 };
+//test
 
 // var servey ={
 // title:"new servey",
