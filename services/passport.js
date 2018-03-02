@@ -29,7 +29,7 @@ passport.use(
           })
             .save()
             .then(user => {
-              
+
               return done(null, user);
             });
         }
@@ -39,25 +39,25 @@ passport.use(
 );
 passport.use(
   new LocalStrategy(function(username, password, done) {
-    console.log(username, password);
+  
     User.findOne({ email: username }, function(err, user) {
       if (err) {
         return done(err);
       }
       if (!user) {
-        console.log("no user");
-        return done(null, false, { message: "Incorrect username." });
+
+        return done(null, false);
       }
 
       bcrypt.compare(password, user.password, (err, isMatch) => {
         if (err) {
-          console.log("password err" + err);
+
           return done(err);
         }
         if (isMatch) {
           return done(null, user);
         } else {
-          return done(null, false, { message: "Incorrect password." });
+          return done(null, false);
         }
       });
     });

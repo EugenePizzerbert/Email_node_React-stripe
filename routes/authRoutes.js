@@ -254,9 +254,7 @@ let smtpConfig = {
 };
 app.post(
   "/api/login",
-  passport.authenticate("local", {
-    failureFlash: "Invalid username or password."
-  }),
+  passport.authenticate("local"),
 
   (req, res) => {
 
