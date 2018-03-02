@@ -15,15 +15,21 @@
   "license": "ISC",
   "dependencies": {
     "@sendgrid/mail": "^6.2.1",
+    "async": "^2.6.0",
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.3",
     "cookie-session": "^2.0.0-beta.2",
+    "crypto": "^1.0.1",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "mongoose": "^5.0.6",
+    "nodemailer": "^4.6.0",
     "nodemon": "^1.15.1",
     "passport": "^0.3.2",
     "passport-google-oauth20": "^1.0.0",
+    "passport-local": "^1.0.0",
     "stripe": "^5.5.0"
   }
 }

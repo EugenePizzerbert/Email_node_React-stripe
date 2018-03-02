@@ -4,11 +4,14 @@ const express = require("express"),
   cookieSession = require("cookie-session"),
   bodyParser = require("body-parser"),
   keys = require("./config/keys"),
-  path = require("path");
-app = express();
+  path = require("path"),
+  flash = require("connect-flash");
 
+app = express();
+app.use(flash());
 app.use(bodyParser.json());
 mongoose.connect(keys.mongoURI, () => console.log("db is connected"));
+
 require("./models/User");
 require("./services/passport");
 
@@ -24,6 +27,7 @@ app.use(passport.session());
 
 //Routes
 require("./routes/authRoutes")(app);
+
 app.use(express.static(path.join(__dirname, "build")));
 
 const PORT = process.env.PORT || 5000;
