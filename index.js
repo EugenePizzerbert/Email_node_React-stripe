@@ -4,11 +4,10 @@ const express = require("express"),
   cookieSession = require("cookie-session"),
   bodyParser = require("body-parser"),
   keys = require("./config/keys"),
-  path = require("path"),
-  flash = require("connect-flash");
+  path = require("path")
 
 app = express();
-app.use(flash());
+
 app.use(bodyParser.json());
 mongoose.connect(keys.mongoURI, () => console.log("db is connected"));
 
