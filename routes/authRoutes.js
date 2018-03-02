@@ -168,7 +168,7 @@ app.post("/api/forgot", function(req, res, next) {
     ],
     function(err) {
       if (err) return next(err);
-      res.status("/forgot");
+      res.status("/api/forgot");
     }
   );
 });
@@ -259,7 +259,7 @@ app.post(
   }),
 
   (req, res) => {
-    req.flash("info", "Flash is back!");
+
     res.send(req.user);
   }
 );

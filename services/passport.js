@@ -20,7 +20,7 @@ passport.use(
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ googleId: profile.id }).then(user => {
         if (user) {
-          console.log("user found " + user);
+
           return done(null, user);
         } else {
           new User({
@@ -29,7 +29,7 @@ passport.use(
           })
             .save()
             .then(user => {
-              console.log("user saved " + user);
+              
               return done(null, user);
             });
         }
