@@ -36,7 +36,7 @@ module.exports = app => {
 
   app.get("/api/logout", (req, res) => {
     req.logout();
-    res.redirect("/");
+    res.json(req.user);
   });
 
   app.post("/api/payout", (req, res) => {
